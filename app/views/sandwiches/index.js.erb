@@ -1,0 +1,5 @@
+
+var $boxes = $('<%= escape_javascript(render("sandwiches")) %>');
+$('#container').html( $boxes ).masonry( 'reload' );
+
+

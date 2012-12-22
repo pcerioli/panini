@@ -1,0 +1,30 @@
+
+<ul class="thumbnails">
+<% @sandwiches.each do |sandwich| %>
+
+
+  <li class="span3">
+    <div class="thumbnail well">
+
+        <%#= site_thumb_for(site) %>
+
+        <div class="caption">
+        <strong><%= link_to sandwich.name, edit_admin_sandwich_path(sandwich) %></strong>
+
+        <p>
+          <%= link_to 'Show', sandwich%>, 
+          <%= link_to 'Edit', edit_admin_sandwich_path(sandwich) %>,
+          <%= link_to 'Destroy', [:admin, sandwich], confirm: 'Are you sure?', method: :delete %>
+        </p>
+      </div>
+    </div>
+
+  </li>
+     
+
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Sandwich', new_admin_sandwich_path %>

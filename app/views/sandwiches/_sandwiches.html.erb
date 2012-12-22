@@ -1,0 +1,27 @@
+<% @sandwiches.each do |sandwich| %>
+
+
+  <div class="box photo col3 front">
+ 
+    <div>
+      <a href="<%= sandwich_path(sandwich) %>" data-remote="true" >
+        <img class="pin-image" src="<%= sandwich.image %>" alt="">
+      </a>
+      <div class="pin-stat">
+        &nbsp;<i class="icon-heart"></i>10
+      </div>
+    </div>
+
+
+
+    <div class="pin-title">
+      <%= sandwich.name %>
+    </div>
+
+
+    
+    <p><%= sandwich.description %></p>
+      
+  </div> 
+
+<% end %>

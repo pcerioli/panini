@@ -1,0 +1,44 @@
+# MySQL.  Versions  5.x are recommended.
+#
+# Install the MySQL driver:
+#   gem install mysql2
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+
+
+login: &login
+  adapter:  mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  password: 
+  socket:  <%=
+    [
+     '/var/lib/mysql/mysqld.sock', #mac osx
+     '/opt/local/var/run/mysql5/mysqld.sock', # darwinports
+     '/opt/local/var/run/mysqld/mysqld.sock', # darwinports, again
+     '/var/run/mysqld/mysqld.sock',           # ubuntu/debian
+     '/tmp/mysql.sock'].select { |f| File.exist? f }.first %>
+     
+
+development:
+  <<: *login
+  database: panini_development
+   
+test:
+  <<: *login
+  database: panini_test
+     
+       
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: panini_production
+  pool: 5
+  username: root
+  password:
+  socket:   /var/run/mysqld/mysqld.sock
+

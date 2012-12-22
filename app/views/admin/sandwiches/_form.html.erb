@@ -1,0 +1,43 @@
+<div class="row-fluid">
+<div class="span4 offset2 well">
+
+  <%= simple_form_for([:admin, @sandwich], :html => {:class => 'form-vertical item-form' , :multipart => true }) do |f| %>
+
+    <% if @sandwich.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@sandwich.errors.count, "error") %> prohibited this sandwich from being saved:</h2>
+
+        <ul>
+        <% @sandwich.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.input :name, label: "Name", placeholder: "sandwich name" %>
+    <%= f.input :description, as: :text,  label: "Description", :input_html => { rows: 6} %>
+
+
+
+    <%= f.input :image, as: :file, :label => 'Picture JPG/PNG' %> 
+    
+    <a id="remote_link" href="#">or enter Remote URL</a> 
+    <%= f.input :remote_image_url, :wrapper_html => { :id => 'remote_image_url'}, :placeholder => "http://" %>
+
+
+    <div class="form-actions">
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </div>
+
+  <% end %>
+
+</div>
+<div class="span4 well">
+  <% if @sandwich.image? %>
+    <%= image_tag @sandwich.image_url.to_s %>
+  <% else %>
+    <%= image_tag "http://placehold.it/400x300" %>
+  <% end %>
+</div>
+</div>

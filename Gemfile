@@ -10,8 +10,8 @@ gem 'mysql2'
 
 
 #gem 'libv8', '3.11.8.3'
-#gem 'will_paginate'
-#gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 gem 'simple_form'
 gem 'country_select'
@@ -29,6 +29,8 @@ gem "carrierwave"
 gem "imgkit"
 
 gem 'cache_digests'
+
+gem 'masonry-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
