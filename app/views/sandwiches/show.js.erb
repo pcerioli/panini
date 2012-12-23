@@ -1,7 +1,9 @@
 
-$('.modal-body').html('<%= escape_javascript(render "show", :object => @sandwich,:formats => [:html]) %>');
+//$('.modal-body').html('<%= escape_javascript(render "show", :object => @sandwich, :formats => [:html]) %>');
+$('.modal-body').html('<%= escape_javascript(render :controller => 'orders', :action => 'new', :layout => false, :locals => { :order => @order, :sandwich_id => @sandwich.id }, :formats => [:html]) %>');
+
 $('#modalSandwichLabel').text('<%= h @sandwich.name %>');
-var $modal = $('#modal-window'); // your selector; cache it; only query the DOM once!
-$modal.modal('show'); // show modal; this happens after 3 seconds 
+//var $modal = $('#modal-window'); // your selector; cache it; only query the DOM once!
+$('#modal-window').modal('show'); // show modal; this happens after 3 seconds 
 
 

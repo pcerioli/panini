@@ -4,21 +4,21 @@
   <div class="box photo col3 front">
  
     <div>
-      <a href="<%= sandwich_path(sandwich) %>" data-remote="true" >
-        <img class="pin-image" src="<%= sandwich.image %>" alt="">
-      </a>
-      <div class="pin-stat">
-        &nbsp;<i class="icon-heart"></i>10
-      </div>
+      <img class="pin-image" src="<%= sandwich.image %>" alt="<%= sandwich.name %>">
     </div>
 
-
+    <div class="pin-stat">
+      &nbsp;<i class="icon-heart"></i>10
+    </div>
+    
+    <div class="pin-order">
+      <!--a class="btn btn-danger" href="<%#= sandwich_path(sandwich) %>" data-remote="true">Order</a -->
+      <a class="btn btn-danger" href="<%= new_sandwich_order_path(sandwich) %>" data-remote="true">Order</a>
+    </div>
 
     <div class="pin-title">
       <%= sandwich.name %>
     </div>
-
-
     
     <p><%= sandwich.description %></p>
       

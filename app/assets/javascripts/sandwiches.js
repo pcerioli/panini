@@ -44,15 +44,19 @@ $(function(){
   );
 
 
-  $("#avatars_search input").keyup(function() {
-    $.get($("#avatars_search").attr("action"), $("#avatars_search").serialize(), null, "script");
-    return false;
-  });
+  // $("#avatars_search input").keyup(function() {
+  //   $.get($("#avatars_search").attr("action"), $("#avatars_search").serialize(), null, "script");
+  //   return false;
+  // });
 
   $(".pin-image").on("click", function(event){
     $(this).parents(".box").addClass("back");
   });
 
-    
+   $('.box').live('mouseenter', function() {
+      $(this).find(".pin-order").show();
+  }).live('mouseleave', function() {
+      $(this).find(".pin-order").hide();
+  });   
 
 });

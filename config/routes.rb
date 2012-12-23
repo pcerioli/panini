@@ -1,6 +1,13 @@
 Panini::Application.routes.draw do
+  #resources :orders
+
+
   resources :sandwiches
 
+
+  resources :sandwiches do
+    resources :orders
+  end
 
   namespace :admin do
     resources :sandwiches
