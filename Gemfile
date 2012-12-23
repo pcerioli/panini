@@ -7,11 +7,15 @@ gem 'rails', '3.2.9'
 
 
 #Whoops - I forgot heroku use pg :)
+#There is also an current issue with rubyracer/libv8 versioning, so I had to patch it a bit
 group :development, :test do
   gem 'mysql2'
+  gem 'libv8', '3.11.8.3' #TO FIX A TEMPORARY ISSUE WITH RUBYRACER COMPILATION
+  gem 'therubyracer', :platforms => :ruby
 end
 group :production do
   gem 'pg'
+  gem 'therubyracer', :platforms => :ruby
 end
 
 gem 'thin' 
@@ -45,10 +49,11 @@ group :assets do
   gem 'sass-rails' #,   '~> 3.2.3'
   gem 'coffee-rails' #, '~> 3.2.1'
 
-	gem 'libv8', '3.11.8.3' #TO FIX A TEMPORARY ISSUE WITH RUBYRACER COMPILATION
+	#gem 'libv8', '3.11.8.3' #TO FIX A TEMPORARY ISSUE WITH RUBYRACER COMPILATION
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  #gem 'therubyracer', :platforms => :ruby
+  #gem 'therubyracer', '0.10.2', :platforms => :ruby
 
   gem 'uglifier' #, '>= 1.0.3'
   
