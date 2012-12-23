@@ -5,9 +5,16 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'mysql2'
 
+#Whoops - I forgot heroku use pg :)
+group :development, :test do
+  gem 'mysql2'
+end
+group :production do
+  gem 'pg'
+end
+
+gem 'thin' 
 
 #gem 'libv8', '3.11.8.3'
 gem 'will_paginate'
@@ -48,12 +55,9 @@ group :assets do
   gem 'chosen-rails'
 end
 
-group :development do
-  gem 'thin'
-  #gem "better_errors"
-end
 
 gem "rspec-rails", :group => [:test, :development]
+
 group :test do
   gem "factory_girl_rails"
   gem "capybara"
