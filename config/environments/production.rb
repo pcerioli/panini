@@ -67,9 +67,21 @@ Panini::Application.configure do
 
 
   #Custom Settings for Mailer
-  config.action_mailer.default_url_options = { :host => 'panini.org' }
+  config.action_mailer.default_url_options = { :host => 'murmuring-garden-6748.herokuapp.com' }
+
 
   config.action_mailer.raise_delivery_errors = true
   
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
+  
+  #Environment Variables are saved in the bash_profile locally
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "murmuring-garden-6748.herokuapp.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
 end
