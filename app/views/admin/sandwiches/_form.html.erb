@@ -18,7 +18,7 @@
     <%= f.input :name, label: "Name", placeholder: "sandwich name" %>
     <%= f.input :description, as: :text,  label: "Description", :input_html => { rows: 6} %>
 
-
+    <%= f.input :category, :collection => ["Meaty", "Vegetarian", "Vegan"] %>
 
     <%= f.input :image, as: :file, :label => 'Picture JPG/PNG' %> 
     

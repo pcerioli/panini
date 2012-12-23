@@ -1,5 +1,5 @@
 class Sandwich < ActiveRecord::Base
-  attr_accessible :name, :description, :image, :remote_image_url, :orders_attributes
+  attr_accessible :name, :description, :category, :image, :remote_image_url, :orders_attributes
 
   mount_uploader :image, ImageUploader
 
