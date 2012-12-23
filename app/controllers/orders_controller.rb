@@ -15,6 +15,8 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
   def show
     @order = Order.find(params[:id])
+    #@sandwich = Sandwich.where("id =?", @order.sandwich_id)
+    @sandwich = @order.sandwich
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,13 +39,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  # GET /orders/1/edit
-  def edit
-    @order = Order.find(params[:id])
-  end
-
-  # POST /orders
-  # POST /orders.json
   def create
     @sandwich = Sandwich.find(params[:sandwich_id])    
     @order = @sandwich.orders.create(params[:order])
@@ -51,7 +46,8 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        #format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        #Send Order to Sandwich Maker
+        OrderMailer.order_confirmation(@sandwich, @order).deliver
         format.html {redirect_to [@sandwich, @order], notice: 'Order was successfully created.'}
         format.json { render json: @order, status: :created, location: @order }
       else
@@ -60,6 +56,14 @@ class OrdersController < ApplicationController
       end
     end
   end
+
+
+
+  # GET /orders/1/edit
+  def edit
+    @order = Order.find(params[:id])
+  end
+
 
   # PUT /orders/1
   # PUT /orders/1.json
