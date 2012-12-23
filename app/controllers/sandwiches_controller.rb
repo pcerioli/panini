@@ -2,25 +2,21 @@ class SandwichesController < ApplicationController
 
   def index
 
-    if params[:search]
-      # @sandwiches = Sandwich.search(params[:search]).paginate  :page => params[:page],
-      # :order => 'created_at DESC'
+    if params[:category]
+      @category = params[:category]
+      @sandwiches = Sandwich.where("category=?", @category).paginate  :page => params[:page]
 
     else
       @sandwiches = Sandwich.paginate  :page => params[:page]
     end
 
-    #@avatars = Avatar.limit(10)
-
     respond_to do |format|
       format.html 
       format.js
     end
-
   end
 
-  # GET /sandwiches/1
-  # GET /sandwiches/1.json
+
   def show
     @sandwich = Sandwich.find(params[:id])
 

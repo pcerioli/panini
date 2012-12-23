@@ -25,7 +25,11 @@
 </div>
 
 <nav id="page-nav">
-  <a href="/sandwiches?page=2"></a>
+  <% if @category %>
+    <a href="/sandwiches?page=2&category=<%= @category %>"></a>
+  <% else %>
+    <a href="/sandwiches?page=2"></a>
+  <% end %>
 </nav>
 
 
