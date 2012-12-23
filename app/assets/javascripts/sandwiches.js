@@ -44,8 +44,8 @@ $(function(){
   );
 
 
-  // $("#avatars_search input").keyup(function() {
-  //   $.get($("#avatars_search").attr("action"), $("#avatars_search").serialize(), null, "script");
+  // $("#sanwiches_search input").keyup(function() {
+  //   $.get($("#sanwiches_search").attr("action"), $("#sanwiches_search").serialize(), null, "script");
   //   return false;
   // });
 

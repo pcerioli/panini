@@ -15,9 +15,9 @@
 /tmp
 
 /config/database.yml
-/config/application.yml
-/db/production_data/*
+# /config/application.yml
+# /db/production_data/*
 
 
 # Ignore all file uploads from the app
-/public/uploads/*
+# /public/uploads/*
