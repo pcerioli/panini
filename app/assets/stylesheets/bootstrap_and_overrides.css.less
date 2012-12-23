@@ -49,6 +49,10 @@ body {
  	}
 }
 
+#sandwiches {
+	padding-left: 50px;
+}
+
 #container {
   //width: 1300px;
 	color: #888;
@@ -141,7 +145,7 @@ body {
   	background-color:#dedede;
   	font-size:18px;
   	padding:10px;
-  	
+
   }
 
 }
@@ -162,21 +166,30 @@ body {
 .col4 img { max-width: 380px; }
 .col5 img { max-width: 480px; }
 
+
 .sandwich-modal {
   width:600px;
+  height:300px;
+  background-color:#fff;
 
   .modal-header {
-    background-color:#ddd;
+    background-color:#ccc;
+    button {
+    	font-size:30px;
+    }
   }
   .modal-body {
-    //overflow-y: hidden;
+    overflow-y: hidden;
     height: 100%;
+    max-height:190px;
   }
   img {
-    margin: -15px 15px 0 -15px;
+    margin: -17px 20px 0 -15px;
     width: 300px;
     max-width: none;
     float:left;
+    padding-bottom: 100px;
+		//overflow-y: hidden;
   }
 
 }
