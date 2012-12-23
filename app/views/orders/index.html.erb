@@ -3,21 +3,23 @@
 <div id="order-index">
 
   <% @orders.each do |order| %>
-    <div class="span10 offset2">
 
-      <div class="order-image span3 well well-small">
-        <%= image_tag(order.sandwich.image, :alt => order.sandwich.name) %>
-        <strong><%= order.sandwich.name %></strong><br />
-        <!--p><%#= order.sandwich.description %></p -->
+    <div class="span7 well">
+
+      <div class="order-img span2 well well-small">
+        <%= image_tag(order.sandwich.image_url(:thumb), :alt => order.sandwich.name) %>
       </div>
-      
-      <div class= "order-desc span3 well">
-        <p>Date: <%= order.created_at.to_date %></p>
-        <p>For: <strong><%= order.client_name %></strong></p>
-        <p>Optional Variations: <%= order.variation %></p>
+
+      <div class= "order-desc span6">
+          Date: <%= order.created_at.to_date %><br>
+          For: <strong><%= order.client_name %></strong><br>
+          <%= order.sandwich.name %><br>
+          Optional Variations: <%= order.variation %>
+
       </div>
     
     </div>
+
   <% end %>
 
 </div>

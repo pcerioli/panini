@@ -49,6 +49,11 @@ $(function(){
   //   return false;
   // });
 
+  $('#selcategory').change(function() {
+    //alert('Handler for .change() called.');
+    this.form.submit();
+  });
+
   $(".pin-image").on("click", function(event){
     $(this).parents(".box").addClass("back");
   });

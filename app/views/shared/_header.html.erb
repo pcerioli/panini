@@ -14,19 +14,17 @@
         <div class="container-fluid nav-collapse">
           <ul class="nav">
             <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+
             <li><a href="#">Filter By:</a></li>
             <li>
 
-              <form class="navbar-form pull-left">
-                <select name="category">
+              <form action="/" method="post" class="navbar-form pull-left">
+                <select id="selcategory" name="category">
                   <option value="">Category</option>
                   <option value="Meaty">Meaty</option>
                   <option value="Vegetarian">Vegetarian</option>
                   <option value="Vegan">Vegan</option>
                 </select>
-
 
               </form>
 
