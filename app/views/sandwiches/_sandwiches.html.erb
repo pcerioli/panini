@@ -4,7 +4,7 @@
   <div class="box photo col3 front">
  
     <div>
-      <img class="pin-image" src="<%= sandwich.image %>" alt="<%= sandwich.name %>">
+      <%= image_tag(sandwich.image, :alt => sandwich.name, :class => "pin-image") %>
     </div>
 
     <div class="pin-stat">

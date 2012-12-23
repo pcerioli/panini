@@ -6,9 +6,9 @@ class OrderMailer < ActionMailer::Base
   #
   #   en.order_mailer.order_confirmation.subject
   #
-  def order_confirmation(sandwich, order)
-    @sandwich = sandwich
+  def order_confirmation(order)
     @order = order
+    @sandwich = order.sandwich
 
     mail to: "pcerioli2@gmail.com", subject: "New Order"
   end

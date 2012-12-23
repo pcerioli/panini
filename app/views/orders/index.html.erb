@@ -1,25 +1,27 @@
 <h1>Listing orders</h1>
 
-<table>
-  <tr>
-    <th>Client name</th>
-    <th>Variation</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="order-index">
 
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.client_name %></td>
-    <td><%= order.variation %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <% @orders.each do |order| %>
+    <div class="span10 offset2">
+
+      <div class="order-image span3 well well-small">
+        <%= image_tag(order.sandwich.image, :alt => order.sandwich.name) %>
+        <strong><%= order.sandwich.name %></strong><br />
+        <!--p><%#= order.sandwich.description %></p -->
+      </div>
+      
+      <div class= "order-desc span3 well">
+        <p>Date: <%= order.created_at.to_date %></p>
+        <p>For: <strong><%= order.client_name %></strong></p>
+        <p>Optional Variations: <%= order.variation %></p>
+      </div>
+    
+    </div>
+  <% end %>
+
+</div>
 
 <br />
 
-<%= link_to 'New Order', new_order_path %>
+<%#= link_to 'New Order', new_order_path %>
