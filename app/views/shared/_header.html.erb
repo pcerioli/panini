@@ -18,16 +18,11 @@
             <li><a href="#">Filter By:</a></li>
             <li>
 
-              <form action="/" method="post" class="navbar-form pull-left">
-                <select id="selcategory" name="category">
-                  <option value="">Category</option>
-                  <option value="Meaty">Meaty</option>
-                  <option value="Vegetarian">Vegetarian</option>
-                  <option value="Vegan">Vegan</option>
-                </select>
-              </form>
 
-
+            <%= form_tag sandwiches_path, :method => 'get', :class => "navbar-form pull-left" do %>
+            <%= select_tag "category", options_for_select([ "", "Meaty", "Vegetarian", "Vegan" ], @category.to_s), :id => "selcategory" %>
+            <% end %>
+            
             </li>
 
           </ul>

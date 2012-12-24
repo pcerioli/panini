@@ -2,7 +2,7 @@ class SandwichesController < ApplicationController
 
   def index
 
-    if params[:category]
+    if params[:category] && !params[:category].blank?
       @category = params[:category]
       @sandwiches = Sandwich.where("category=?", @category).paginate  :page => params[:page], :order => 'id ASC'
 

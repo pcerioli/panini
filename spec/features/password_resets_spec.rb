@@ -25,7 +25,7 @@ describe "PasswordResets" do
   # I added the following specs after recording the episode. It literally
   # took about 10 minutes to add the tests and the implementation because
   # it was easy to follow the testing pattern already established.
-  it "updates the user password when confirmation matches" do
+  it "updates the password when confirmation matches" do
     user = FactoryGirl.create(:user, :password_reset_token => "something123", :password_reset_sent_at => 1.hour.ago)
     visit edit_password_reset_path(user.password_reset_token)
     find('#user_password').set("foobar123")
