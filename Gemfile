@@ -26,7 +26,7 @@ gem 'country_select'
 
 gem 'jquery-rails'
 
-gem 'devise'
+#gem 'devise'
 
 gem "less-rails" 
 gem 'twitter-bootstrap-rails' #, :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
@@ -34,7 +34,7 @@ gem 'twitter-bootstrap-rails' #, :git => 'git://github.com/seyhunak/twitter-boot
 gem "rmagick"
 gem "carrierwave"
 #gem "selenium-webdriver"
-gem "imgkit"
+#gem "imgkit"
 
 gem 'cache_digests'
 
@@ -65,7 +65,6 @@ end
 
 
 gem "rspec-rails", :group => [:test, :development]
-
 group :test do
   gem "factory_girl_rails"
   gem "capybara"
@@ -77,7 +76,7 @@ end
 
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

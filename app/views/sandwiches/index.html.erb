@@ -10,12 +10,11 @@
           What would you like to eat today? 
           Click on the sandwich you want, <br><br>
           If you wish to keep track of your orders,
-          you should signup
+          you should <%= link_to "sign up", new_user_path %>
         </p>
       </div> 
 
     <% end %>
-
 
 
     <%= render 'sandwiches' %>

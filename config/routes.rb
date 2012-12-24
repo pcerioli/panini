@@ -1,9 +1,18 @@
 Panini::Application.routes.draw do
   
+  
+
+  get 'signup', to: 'users#new', as: 'signup'
+  post 'signup', to: 'users#create', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  post 'login', to: 'sessions#create', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  #resources :sessions
+  resources :users
+
   resources :orders
-
   resources :sandwiches
-
+  resources :password_resets
 
   resources :sandwiches do
     resources :orders

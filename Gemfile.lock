@@ -67,11 +67,6 @@ GEM
       after_commit_action (~> 0.1.3)
     country_select (1.0.1)
     daemons (1.1.9)
-    devise (2.1.2)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (~> 3.1)
-      warden (~> 1.2.1)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     eventmachine (1.0.0)
@@ -93,7 +88,6 @@ GEM
       rspec (~> 2.11)
     hike (1.2.1)
     i18n (0.6.1)
-    imgkit (1.3.7)
     journey (1.0.4)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
@@ -121,7 +115,6 @@ GEM
     multi_json (1.5.0)
     mysql2 (0.3.11)
     nokogiri (1.5.5)
-    orm_adapter (0.4.0)
     pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.10)
@@ -208,8 +201,6 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    warden (1.2.1)
-      rack (>= 1.0)
     websocket (1.0.4)
     will_paginate (3.0.3)
     xpath (1.0.0)
@@ -219,6 +210,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby (~> 3.0.0)
   bootstrap-will_paginate
   cache_digests
   capybara
@@ -227,10 +219,8 @@ DEPENDENCIES
   coffee-rails
   counter_culture
   country_select
-  devise
   factory_girl_rails
   guard-rspec
-  imgkit
   jquery-rails
   less-rails
   masonry-rails
