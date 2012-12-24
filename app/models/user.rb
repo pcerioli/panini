@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  has_many :orders
+  
   validates :fullname, :presence => true
   validates :password, 
             :on => :create,

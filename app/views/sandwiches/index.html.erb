@@ -9,8 +9,12 @@
         <p class="intro">
           What would you like to eat today? 
           Click on the sandwich you want, <br><br>
-          If you wish to keep track of your orders,
-          you should <%= link_to "sign up", new_user_path %>
+          <% if current_user %>
+            You can also check on <%= link_to "Your Order History", user_orders_path(current_user) %>
+          <% else %>
+            If you wish to keep track of your orders,
+            you should <%= link_to "sign up", new_user_path %>
+          <% end %>
         </p>
       </div> 
 

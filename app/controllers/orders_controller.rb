@@ -2,8 +2,12 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.includes(:sandwich).order("id desc")
-
+    if (params["user_id"])
+      @orders = Order.where("user_id=?", params["user_id"]).includes(:sandwich).order("id desc")
+    else 
+      @orders = Order.includes(:sandwich).order("id desc")
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
@@ -45,6 +49,7 @@ class OrdersController < ApplicationController
   def create
     @sandwich = Sandwich.find(params[:sandwich_id])    
     @order = @sandwich.orders.create(params[:order])
+    @order.user_id = current_user.id if signed_in?
     #@order = Order.new(params[:order])
 
     respond_to do |format|

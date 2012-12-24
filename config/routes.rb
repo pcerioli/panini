@@ -17,6 +17,10 @@ Panini::Application.routes.draw do
   resources :sandwiches do
     resources :orders
   end
+  resources :users do
+    resources :orders
+  end
+  
 
   namespace :admin do
     resources :sandwiches

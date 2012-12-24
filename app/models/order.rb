@@ -1,7 +1,8 @@
 class Order < ActiveRecord::Base
-  attr_accessible :sandwich_id, :client_name, :variation 
+  attr_accessible :sandwich_id, :client_name, :variation, :user_id
 
   belongs_to :sandwich
+  belongs_to :user
 
 	counter_culture :sandwich
 
