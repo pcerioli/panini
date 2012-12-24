@@ -10,6 +10,9 @@
 
 <%= image_tag(image_path(@sandwich.image_url), :width => "300" ) %>
 
+<pre>Random Quote:<br>
+<%= Quote.random.html_safe %>
+</pre>
 
 
 <%#= order_url(@order) %>

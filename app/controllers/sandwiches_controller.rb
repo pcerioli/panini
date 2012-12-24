@@ -4,10 +4,10 @@ class SandwichesController < ApplicationController
 
     if params[:category]
       @category = params[:category]
-      @sandwiches = Sandwich.where("category=?", @category).paginate  :page => params[:page]
+      @sandwiches = Sandwich.where("category=?", @category).paginate  :page => params[:page], :order => 'id ASC'
 
     else
-      @sandwiches = Sandwich.paginate  :page => params[:page]
+      @sandwiches = Sandwich.paginate  :page => params[:page], :order => "id ASC"
     end
 
     respond_to do |format|
