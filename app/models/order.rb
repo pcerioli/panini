@@ -3,6 +3,8 @@ class Order < ActiveRecord::Base
 
   belongs_to :sandwich
 
+	counter_culture :sandwich
+
   validates :client_name, :presence => true, :length => {:maximum => 255}
   validates :sandwich_id, :presence => true
 
