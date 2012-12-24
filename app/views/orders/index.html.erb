@@ -1,21 +1,25 @@
-<h1>Listing orders</h1>
+<h3>Listing orders</h3>
 
 <div id="order-index">
 
   <% @orders.each do |order| %>
 
-    <div class="span7 well">
+    <div class="span5 well well-small">
+      <div class="row-fluid">
 
-      <div class="order-img span2 well well-small">
-        <%= image_tag(order.sandwich.image_url(:thumb), :alt => order.sandwich.name) %>
-      </div>
+        <div class="order-img span2 well well-small">
+          <%= image_tag(order.sandwich.image_url(:thumb), :alt => order.sandwich.name) %>
+        </div>
 
-      <div class= "order-desc span6">
-          Date: <%= order.created_at.to_date %><br>
-          For: <strong><%= order.client_name %></strong><br>
-          <%= order.sandwich.name %><br>
-          Optional Variations: <%= order.variation %>
+        <div class= "order-desc span8">
+            Date: <%= order.created_at.to_date %><br>
+            For: <strong><%= order.client_name %></strong><br>
+            <%= order.sandwich.name %><br>
+            <div class="order-vars well well-small">
+              Variations: <%= order.variation %>
+            </div>
 
+        </div>
       </div>
     
     </div>

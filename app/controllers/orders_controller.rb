@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.includes(:sandwich)
+    @orders = Order.includes(:sandwich).order("id desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,8 +46,8 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-
-        format.html {redirect_to [@sandwich, @order], notice: 'Order was successfully created.'}
+        #format.html {redirect_to [@sandwich, @order], notice: 'Order was successfully created.'}
+        format.html {redirect_to orders_path, notice: 'Your order has been transmitted to the SandwichMaker and will be delivered soon!'}
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
