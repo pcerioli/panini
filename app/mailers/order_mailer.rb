@@ -10,7 +10,7 @@ class OrderMailer < ActionMailer::Base
     @order = order
     @sandwich = order.sandwich
 
-    mail to: "pcerioli2@gmail.com", subject: "New Order"
+    mail to: "make_sandwich@generalthings.com", subject: "New Order"
   end
 
 end
