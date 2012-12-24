@@ -6,10 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#require 'csv'
 
 
 #Truncating table (optional)
+#NOTE: Heroku doesn't run this truncate command - Not sure why
+#Anyway for emergencies, recreate the db schema by running this:
+#$ heroku run db:schema:dump
+#$ heroku run db:schema:load
+#$ heroku run db:seed
+#There must be a better way...! but right now I am in a hurry
 ActiveRecord::Base.connection.execute("TRUNCATE sandwiches")
 
 #Importing sanwiches

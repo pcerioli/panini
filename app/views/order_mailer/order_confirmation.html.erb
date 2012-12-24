@@ -1,0 +1,17 @@
+<p>Dear Sandwich Maker, </p>
+
+<p><%= @order.client_name %> has just submitted a new order for this sandwich:</p>
+
+<p><%= @sandwich.name %></p>
+
+<p>Variations: <br>
+	<%= @order.variation %>
+</p>
+
+<%= image_tag(image_path(@sandwich.image_url), :width => "300" ) %>
+
+
+
+<%#= order_url(@order) %>
+
+<%#= user_url(@user) %>

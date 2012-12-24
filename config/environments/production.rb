@@ -68,7 +68,7 @@ Panini::Application.configure do
 
   #Custom Settings for Mailer
   config.action_mailer.default_url_options = { :host => 'murmuring-garden-6748.herokuapp.com' }
-
+  config.action_mailer.asset_host = "http://murmuring-garden-6748.herokuapp.com"
 
   config.action_mailer.raise_delivery_errors = true
   
